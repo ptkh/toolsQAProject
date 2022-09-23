@@ -1,0 +1,4 @@
+[
+  {"user_n":  1, "f_name":  "Jon", "l_name":  "Snow", "email":  "knownothing@gmail.com", "age":  30, "salary":  3000, "dept":  "alpha"},
+  {"user_n":  2, "f_name":  "Buttercup", "l_name":  "Cumbersnatch", "email":  "BudapestCandyGram@mail.io", "age":  41, "salary":  2000, "dept":  "beta"}
+]

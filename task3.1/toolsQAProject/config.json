@@ -1,0 +1,17 @@
+{
+    "browser": "firefox",
+    "url": "https://demoqa.com/",
+    "browser_options": [
+        "--headless",
+        "--disable-gpu",
+        "--incognito",
+        "--window-size=1920,1080",
+        "--disable-extensions",
+        "--proxy-server='direct://",
+        "--proxy-bypass-list=*",
+        "--disable-dev-shm-usage",
+        "--no-sandbox",
+        "--ignore-certificate-errors"
+    ],
+    "wait_time": 10
+}
