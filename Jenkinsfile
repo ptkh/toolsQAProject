@@ -1,11 +1,11 @@
 pipeline {
     agent any
-    options {
-        buildDiscarder(logRotator(numToKeepStr:'10'))
-        disableConcurrentBuilds()
-    }triggers {
+    triggers {
         githubPush()
         cron '@hourly'
+    }options {
+        buildDiscarder(logRotator(numToKeepStr:'10'))
+        disableConcurrentBuilds()
     }stages {
         stage('run tests') {
             steps {
