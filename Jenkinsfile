@@ -1,11 +1,11 @@
 pipeline {
+    agent any
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
     }triggers {
         githubPush()
         cron '@hourly'
-    }agent any
-    stages {
+    }stages {
         stage('run tests') {
             steps {
                 script {
