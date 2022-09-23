@@ -8,7 +8,8 @@ from framework.utilities.driverUtil import DriverUtil
 
 class Browser:
     """"""
-    def __init__(self):
+    def __init__(self, browser_choice):
+        DriverUtil.browser_choice = browser_choice
         self.driver = DriverUtil.get_driver()
 
     @property

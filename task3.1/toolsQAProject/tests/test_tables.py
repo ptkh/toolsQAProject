@@ -3,7 +3,7 @@ from framework.utilities.fileUtil import JsonUtil
 
 
 class TestTables:
-    @pytest.mark.parametrize("user", JsonUtil.load_users('test_data/testData.json'))
+    @pytest.mark.parametrize("user", JsonUtil.load_users('./task3.1/toolsQAProject/tests/test_data/testData.json'))
     def test_tables(self, browser, user):
         browser.tablesSteps.navigate_to_main_page()
         assert browser.tablesSteps.main_page_is_open()

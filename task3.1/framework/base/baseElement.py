@@ -37,6 +37,12 @@ class BaseElement:
 
     def click(self) -> None:
         try:
+            hide_ad_script = '''
+            element = document.getElementById('adplus-anchor');
+            element.style.display = 'none';
+            '''
+            self.driver.execute_script(hide_ad_script)
+            
             self.event_listener.before_click(self.name, self.driver)
             self.element.click()
             self.event_listener.after_click(self.name, self.driver)

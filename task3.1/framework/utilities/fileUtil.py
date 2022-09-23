@@ -7,7 +7,7 @@ class JsonUtil:
 
     @staticmethod
     def load_data(filepath):
-        with open(os.path.join(filepath), 'r') as f:
+        with open(filepath, 'r') as f:
             data = json.load(f)
         return data
 

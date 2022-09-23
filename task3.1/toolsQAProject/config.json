@@ -1,5 +1,4 @@
 {
-    "browser": "firefox",
     "url": "https://demoqa.com/",
     "browser_options": [
         "--headless",

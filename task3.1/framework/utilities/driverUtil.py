@@ -9,7 +9,9 @@ from framework.utilities.loggingUtil import EventLogger
 
 
 class DriverUtil:
-    """"""
+    """Singleton class to create webdriver instance with options specified in config.json
+    Browser choice depends on provided optional cli argument '--browser' (chrome/firefox)"""
+    browser_choice = None
     event_listener = None
     _config_data = None
     _wait_time = None
@@ -21,7 +23,7 @@ class DriverUtil:
         if cls.driver is None:
             cls.event_listener = EventLogger()
             DriverUtil.parse_config()
-            if DriverUtil._config_data['browser'] == "firefox":
+            if cls.browser_choice == "firefox":
                 web_driver = webdriver.Firefox
                 service = FirefoxService(GeckoDriverManager().install())
                 webdriver_options = webdriver.FirefoxOptions()

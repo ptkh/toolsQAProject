@@ -9,7 +9,7 @@ class Logger:
     def __new__(cls, *args, **kwargs):
         logger = logging.getLogger(__name__)
         logger.setLevel(logging.INFO)
-        f_handler = logging.FileHandler('../log/report.log')
+        f_handler = logging.FileHandler('./task3.1/toolsQAProject/log/report.log')
         formatter = logging.Formatter('%(asctime)s  - %(levelname)s - %(message)s')
         f_handler.setFormatter(formatter)
         logger.addHandler(f_handler)

@@ -2,6 +2,8 @@ from selenium.webdriver.common.by import By
 from framework.base.baseForm import BaseForm
 from framework.base.elements import Button
 from framework.models.userModel import User
+from selenium.webdriver.support import expected_conditions as ec
+from framework.utilities.driverUtil import DriverUtil
 
 
 class WebTablesForm(BaseForm):
@@ -42,7 +44,10 @@ class WebTablesForm(BaseForm):
         self.webTablesPage.registrationForm.enter_user_data(user_data)
 
     def registration_form_is_closed(self) -> bool:
-        return len(self.driver.find_elements(By.ID, "userForm")) == 0
+        reg_form = self.driver.find_elements(By.ID, "registration-form-modal")
+        if reg_form:
+            DriverUtil.wait_until(ec.invisibility_of_element(reg_form[0]))
+        return not bool(self.driver.find_elements(By.ID, "registration-form-modal"))
 
     def click_add_button(self) -> None:
         self.webTablesPage.addButton.click()
