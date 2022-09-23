@@ -1,8 +1,7 @@
 pipeline {
+    properties([[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '10']]]);
     agent any
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
-    }triggers {
+    triggers {
         githubPush()
         cron '@hourly'
     }stages {
